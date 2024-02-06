@@ -22,7 +22,6 @@ frame = Frame(window, width=200, height=200, bd=1, relief=tkinter.SOLID)
 frame.place(x=30, y=70)
 
 
-# Fonksiyonlar
 def generate():
     if len(entry1.get()) == 0:
         messagebox.showerror(title="Error!", message="Please enter a URL address.")
@@ -43,7 +42,7 @@ def generate():
 
 
 def clear():
-    # Eski QR kodunu temizle
+    
     for widget in frame.winfo_children():
         widget.destroy()
     # Entry'yi temizle
@@ -54,7 +53,7 @@ def svg_to_png(svg_file, png_file):
     subprocess.run(['rsvg-convert', '-f', 'png', '-o', png_file, svg_file])
 
 
-# Butonlar
+
 generatebutton = Button(text="Generate QR", font=font, width=8, height=2, command=generate)
 generatebutton.place(x=270, y=68)
 
